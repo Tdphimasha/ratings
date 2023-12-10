@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Booking System</title>
+</head>
+<body>
+
+<!-- Display the list of appointments -->
+<div id="appointments">
+    <!-- Each appointment has a unique ID -->
+    <div data-appointment-id="1">
+        <p>Appointment Date: January 1, 2023</p>
+        <button onclick="updateAppointment(1)">Update</button>
+        <button onclick="deleteAppointment(1)">Delete</button>
+    </div>
+    <!-- More appointments... -->
+</div>
+
+<!-- Update form/modal -->
+<div id="updateForm" style="display: none;">
+    <h2>Update Appointment</h2>
+    <!-- Add form fields for updating appointment details -->
+    <input type="text" id="updatedDate" placeholder="New Date">
+    <button onclick="saveUpdatedAppointment()">Save</button>
+</div>
+
+<script>
+    let currentAppointmentId;
+
+    function updateAppointment(appointmentId) {
+        // Display the update form/modal
+        document.getElementById('updateForm').style.display = 'block';
+        // Store the current appointment ID
+        currentAppointmentId = appointmentId;
+    }
+
+    function deleteAppointment(appointmentId) {
+        // Send a request to your backend to delete the appointment with the given ID
+        // Reload the page or update the UI accordingly
+    }
+
+    function saveUpdatedAppointment() {
+        // Get the updated date from the form
+        const updatedDate = document.getElementById('updatedDate').value;
+        // Send a request to your backend to update the appointment with the new date
+        // Reload the page or update the UI accordingly
+    }
+</script>
+
+</body>
+</html>
